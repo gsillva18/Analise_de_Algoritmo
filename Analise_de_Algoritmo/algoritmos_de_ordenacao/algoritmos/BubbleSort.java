@@ -12,8 +12,11 @@ import java.time.Instant;
 public class BubbleSort extends AlgoritmoOrdenacao {
 	
 	@Override
-	public long sort(long[] array) {
-		System.out.println("Bubble Sort");
+	public long[] sort(long[] array) {
+		
+		long numeroDeComparacoesDeChaves = 0;
+		long numeroDeMovimentacoesDeRegistros = 0;
+		
 		Instant start = Instant.now();
 		
 		// Se não houveram mudanças, o array já está ordenado
@@ -27,11 +30,18 @@ public class BubbleSort extends AlgoritmoOrdenacao {
 			
 			for (int i = 0; i < array.length -1 - j; i++) {
 				
+				//aqui abaixo ocorre a comparação de chaves
+				numeroDeComparacoesDeChaves++;
+				
 				if(array[i] > array[i+1]) {
 					// Troca do valor com seu sucessor
 					long aux = array[i];
 					array[i] = array[i+1];
 					array[i+1] = aux;
+					
+					//se entrar no if, acontecerão 3 movimentações de registros, na linha 38, 39 e 40
+					numeroDeMovimentacoesDeRegistros += 3;
+					
 					hasChanged = true;			
 				}
 			}
@@ -42,6 +52,7 @@ public class BubbleSort extends AlgoritmoOrdenacao {
 
 		Duration duration = Duration.between(start, end);
 		long durationInMillisseconds = duration.toMillis();
-		return durationInMillisseconds;
+		
+		return new long[] {durationInMillisseconds, numeroDeComparacoesDeChaves, numeroDeMovimentacoesDeRegistros};
 	}
 }

@@ -10,8 +10,11 @@ import java.time.Instant;
 public class SelectionSort extends AlgoritmoOrdenacao {
 	
 	@Override
-	public long sort(long[] array) {
-		System.out.println("Selection Sort");
+	public long[] sort(long[] array) {
+		
+		long numeroDeComparacoesDeChaves = 0;
+		long numeroDeMovimentacoesDeRegistros = 0;
+		
 		Instant start = Instant.now();
 		
 		for (int i = 0; i < array.length; i++) {			
@@ -21,7 +24,9 @@ public class SelectionSort extends AlgoritmoOrdenacao {
 			// A iteração em busca do menor valor deve acontecer ap�s
 			// a posição do i, pois este trecho já está ordenado
 			for (int j = i+1; j < array.length; j++) {
-				if(array[j] < array[indexSmaller])
+				
+				numeroDeComparacoesDeChaves++;
+				if(array[j] < array[indexSmaller]) //aqui acontece uma comparação de chaves
 					indexSmaller = j;
 			}
 			
@@ -29,12 +34,14 @@ public class SelectionSort extends AlgoritmoOrdenacao {
 			long aux = array[i];
 			array[i] = array[indexSmaller];
 			array[indexSmaller] = aux;
+			
+			numeroDeMovimentacoesDeRegistros+= 3; //acontecem 3 movimentações de registros anteriormente
 		}
 		
 		Instant end = Instant.now();
 
 		Duration duration = Duration.between(start, end);
 		long durationInMillisseconds = duration.toMillis();
-		return durationInMillisseconds;
+		return new long[] {durationInMillisseconds, numeroDeComparacoesDeChaves, numeroDeMovimentacoesDeRegistros};
 	}
 }

@@ -8,11 +8,14 @@ package algoritmos;
 
 public abstract class AlgoritmoOrdenacao {
 
-	public long sort(long[] array) {
+	/**
+	 * Método responsável por ordenar o array passado por parâmetro
+	 * @param array Array que se deseja ordenar
+	 * @return retorna um array de longs contendo o tempo em mili segundos, o numero de comparações de chaves e o numero de movimentações de registros,
+	 * nas posições 0, 1 e 2 do array respectivamente
+	 */
+	public long[] sort(long[] array) {
 		throw new UnsupportedOperationException("[ERRO] Operação de ordenação não suportada. Verifique os parâmetros de entrada");
 	}
 	
-	public void sort(long[] array, int i, int f) {
-		throw new UnsupportedOperationException("[ERRO] Operação de ordenação não suportada. Verifique os parâmetros de entrada");
-	}
 }
