@@ -14,7 +14,7 @@ public class QuickSort extends AlgoritmoOrdenacao {
 	private long numeroDeMovimentacoesDeRegistros = 0;
 	
 	@Override
-	public long[] sort(long[] array) {
+	public long[] sort(Long[] array) {
 		
 		Instant start = Instant.now();
 		
@@ -29,7 +29,7 @@ public class QuickSort extends AlgoritmoOrdenacao {
 	}
 	
 	
-	public void sort(long[] array, int i, int f) {
+	public void sort(Long[] array, int i, int f) {
 		int e = i, d = f;
 		
 		// Pivô calculado aleatoriamente

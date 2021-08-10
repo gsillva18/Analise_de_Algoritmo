@@ -12,7 +12,7 @@ import java.time.Instant;
 public class BubbleSort extends AlgoritmoOrdenacao {
 	
 	@Override
-	public long[] sort(long[] array) {
+	public long[] sort(Long[] array) {
 		
 		long numeroDeComparacoesDeChaves = 0;
 		long numeroDeMovimentacoesDeRegistros = 0;

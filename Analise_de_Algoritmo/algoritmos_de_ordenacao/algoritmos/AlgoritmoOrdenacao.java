@@ -14,7 +14,7 @@ public abstract class AlgoritmoOrdenacao {
 	 * @return retorna um array de longs contendo o tempo em mili segundos, o numero de comparações de chaves e o numero de movimentações de registros,
 	 * nas posições 0, 1 e 2 do array respectivamente
 	 */
-	public long[] sort(long[] array) {
+	public long[] sort(Long[] array) {
 		throw new UnsupportedOperationException("[ERRO] Operação de ordenação não suportada. Verifique os parâmetros de entrada");
 	}
 	

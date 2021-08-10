@@ -14,7 +14,7 @@ public class MergeSort extends AlgoritmoOrdenacao {
 	private long numeroDeMovimentacoesDeRegistros = 0;
 	
 	@Override
-	public long[] sort(long[] array) {
+	public long[] sort(Long[] array) {
 
 		Instant start = Instant.now();
 		
@@ -29,7 +29,7 @@ public class MergeSort extends AlgoritmoOrdenacao {
 		
 	}
 	
-	public void sort(long[] array, int i, int f) {
+	public void sort(Long[] array, int i, int f) {
 		if(i < f) {
 			int middle = (i + f) / 2;
 			sort(array, i, middle);
@@ -38,7 +38,7 @@ public class MergeSort extends AlgoritmoOrdenacao {
 		}
 	}
 
-	public void merge(long array[], int left, int middle, int right) { 
+	public void merge(Long array[], int left, int middle, int right) { 
         // Obtendo o tamanho dos subarrays a serem intercalados 
         int n1 = middle - left + 1; 
         int n2 = right - middle; 
